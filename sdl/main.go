@@ -87,7 +87,24 @@ func gameLoop(renderer *sdl.Renderer) {
 			}
 		}
 
-		// Update game state
+		w := screenWidth
+		for x := 0; x < w; x++ {
+			// calculate ray position and direction
+			var cameraX float64 = 2 * float64(x) / float64(w) - 1
+			rayDirX := dirX + planeX * cameraX
+			rayDirY := dirY + planeY * cameraX
+			
+			// which box of the map we're in
+			mapX := int(posX)
+			mapY := int(posY)
+
+			// length of ray from current position to next x or y-side
+			var sideDistX float64
+			var sideDistY float64
+
+			
+
+		}
 
 		renderer.Clear()
 		// Drawing code here
